@@ -12,7 +12,7 @@ class ExampleCode extends BaseCode {
             if (myCollection.getSize().compareTo(15) > new Integer(VALUE_TWO)) {
                 System.out.println("VALUE");
             }
-            if (myCollection.contains(sampleValue).someCheck() && someCheck(otherValue)) {
+            if (someCheck(sampleValue) && myCollection.contains(otherValue).someCheck()) {
                 System.out.println("HAS_VALUE");
             }
         }
