@@ -1,6 +1,7 @@
 package org.aurea.slbp.verify;
 
 import java.util.Collections;
+import java.util.Objects;
 
 class ExampleUser extends BaseCode {
 
@@ -8,8 +9,9 @@ class ExampleUser extends BaseCode {
         String sampleValue = "SAMPLE";
         String otherValue = "SAMPLE";
         ExampleCollection<ExampleValue> myCollection = new ExampleCollection<ExampleValue>(Collections.emptyList());
-        if (myCollection.isEmpty()) {
-            if (myCollection.getSize().compareTo(15) < new Long(VALUE_ONE)) {
+        if (myCollection.isEmpty() && Objects.nonNull(myCollection.contains(sampleValue))
+            || myCollection.contains(otherValue).someCheck()) {
+            if (myCollection.getSize().compareTo(15) < 120L) {
                 System.out.println("VALUE");
             }
             if (someCheck(sampleValue) && myCollection.contains(otherValue).someCheck()) {
